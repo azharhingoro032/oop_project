@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import inquirer from 'inquirer';
 import chalk from 'chalk';
 console.log(chalk.blue("============================================================"));
@@ -31,11 +32,16 @@ async function main() {
                     type: 'input',
                     name: 'studentName',
                     message: 'Please enter the student name:',
+                },
+                {
+                    type: 'input',
+                    name: 'question',
+                    message: 'Nice to meet you! How are you doing today?',
                 }
             ]);
             students.push(student.studentName);
             console.log(`Hello, I am ${student.studentName}.`);
-            console.log("Nice to meet you! How are you doing today?");
+            console.log(`My today plain: ${student.question}`);
             console.log("\n--- List of Students ---");
             students.forEach((name, index) => {
                 console.log(`${index + 1}. ${name}`);
